@@ -16,10 +16,10 @@ const config: { [key: string]: Knex.Config } = {
       max: 10,
     },
     migrations: {
-      directory: './db/migrations',
+      directory: './src/db/migrations',
     },
     seeds: {
-      directory: './db/seeds',
+      directory: './src/db/seeds',
     },
   },
   // test: {
