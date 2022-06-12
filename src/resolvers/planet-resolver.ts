@@ -15,9 +15,9 @@ class PlanetResolver {
     @Args() { limit }: GetPlanetArgs,
   ) {
     const { db } = ctx
-    const tweets = await db('planets').limit(limit)
+    const planets = await db('planets').limit(limit)
 
-    return tweets
+    return planets
   }
   @Query(() => Planets)
   async planet (
