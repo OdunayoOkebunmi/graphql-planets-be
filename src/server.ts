@@ -3,13 +3,16 @@ import { ApolloServer } from "apollo-server-koa";
 import { buildSchema } from 'type-graphql';
 import PlanetResolver from './resolvers/planet-resolver';
 import SpaceCenterResolver from './resolvers/spacecenters-resolver';
+import FlightResolver from './resolvers/flight-resolver';
 import Query from './resolvers';
 import database from './db_config';
 
 export const schema = async () => {
   return await buildSchema({
     resolvers: [
-      PlanetResolver, SpaceCenterResolver
+      PlanetResolver,
+      SpaceCenterResolver,
+      FlightResolver
     ],
   })
 }

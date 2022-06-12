@@ -5,8 +5,20 @@ export async function up (knex: Knex): Promise<void> {
   return knex.schema.createTable('flights', (t) => {
     t.increments('id');
     t.string('code');
-    t.dateTime('departure_at');
-    t.integer('seat_count');
+    t.dateTime('departureAt');
+    t.integer('seatCount');
+    t.integer('launchSiteId');
+    t.integer('landingSiteId');
+    t
+      .foreign('launchSiteId')
+      .references('space_centers.id')
+      .onUpdate('CASCADE')
+      .onDelete('CASCADE');
+    t
+      .foreign('landingSiteId')
+      .references('space_centers.id')
+      .onUpdate('CASCADE')
+      .onDelete('CASCADE');
   });
 }
 

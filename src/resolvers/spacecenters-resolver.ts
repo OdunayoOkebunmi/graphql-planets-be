@@ -44,7 +44,7 @@ class SpaceCenterResolver {
     @Root() spaceCenter: SpaceCenter,
   ) {
     const { db } = ctx
-    return await await db('planets').select('*').where('code', spaceCenter.planet_code).first()
+    return await db('planets').select('*').where('code', spaceCenter.planet_code).first()
   }
   @Query(() => SpaceCenter)
   async spaceCenter (
@@ -54,9 +54,9 @@ class SpaceCenterResolver {
   ) {
     const { db } = ctx
     if (id)
-      return await await db('space_centers').select('*').where('id', id).first()
+      return await db('space_centers').select('*').where('id', id).first()
     else
-      return await await db('space_centers').select('*').where('uid', uid).first()
+      return await db('space_centers').select('*').where('uid', uid).first()
   }
 }
 export default SpaceCenterResolver;
