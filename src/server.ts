@@ -1,13 +1,14 @@
 import "reflect-metadata";
 import { ApolloServer } from "apollo-server-koa";
 import { buildSchema } from 'type-graphql';
+import PlanetResolver from './resolvers/planet-resolver';
 import Query from './resolvers';
 import database from './db_config';
 
 export async function createApolloServer (app: object): Promise<ApolloServer> {
   const server = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [Query]
+      resolvers: [PlanetResolver, Query]
     }),
     context: ({ req, res }: any) => {
       return {
