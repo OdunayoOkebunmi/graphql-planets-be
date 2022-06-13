@@ -1,8 +1,7 @@
-import { ValidationError } from 'apollo-server'
 import db from '../db_config'
 import { testClient } from './setup'
 import { getPlanets, getPlanetsByID } from './queries/planets.queries';
-import { seedPlanets } from './utils'
+import { seedPlanets } from './helper'
 
 
 
