@@ -7,6 +7,7 @@ export async function up (knex: Knex): Promise<void> {
     t.string('code');
     t.dateTime('departureAt');
     t.integer('seatCount');
+    t.integer('availableSeats');
     t.integer('launchSiteId');
     t.integer('landingSiteId');
     t

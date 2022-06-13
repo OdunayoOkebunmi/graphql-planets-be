@@ -1,5 +1,5 @@
 import { Knex } from "knex";
-const space_centers = require('../../space-centers.json');
+const space_centers = require('../../../space-centers.json');
 
 export async function seed (knex: Knex): Promise<void> {
     // Deletes ALL existing entries

@@ -33,4 +33,7 @@ export default class Flight {
 
   @Field({ nullable: true, defaultValue: 0 })
   seatCount: number
+
+  @Field({ nullable: true, defaultValue: 0 })
+  availableSeats: number
 }

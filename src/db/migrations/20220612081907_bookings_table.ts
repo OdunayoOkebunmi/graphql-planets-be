@@ -6,6 +6,11 @@ export async function up (knex: Knex): Promise<void> {
     t.increments('id');
     t.integer('seat_count');
     t.string('email');
+    t.integer('flight_id');
+    t.foreign('flight_id')
+      .references('flights.id')
+      .onDelete('CASCADE')
+      .onUpdate('CASCADE');
   });
 }
 

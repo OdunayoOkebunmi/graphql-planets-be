@@ -1,4 +1,4 @@
-import { Arg, Args, ArgsType, Query, Resolver, Float, Mutation, Field, FieldResolver, Int, InputType, Root, Ctx, ID } from 'type-graphql';
+import { Arg, Args, ArgsType, Query, Resolver, Mutation, Field, FieldResolver, Int, InputType, Root, Ctx } from 'type-graphql';
 import { v4 as uuidv4 } from 'uuid';
 import Flight, { FlightPagination } from '../entities/flights';
 import { Max, Min } from 'class-validator';
@@ -80,6 +80,20 @@ export default class FlightResolver {
   ) {
     return flight.seatCount
   }
+
+  @FieldResolver()
+  async availableSeats (
+    @Ctx() ctx: MyContext,
+    @Root() flight: Flight,
+  ) {
+    const { db } = ctx
+    const totalSeats = flight.seatCount;
+    const bookings = await db('bookings').where('flight_id', flight.id).first()
+    return [...bookings]
+      .map((booking) => booking.seat_count)
+      .reduce((previousValue, currentValue) => previousValue - currentValue, totalSeats);
+  }
+
   // create a flight
   @Mutation(() => Flight)
   async scheduleFlight (
