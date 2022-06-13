@@ -41,6 +41,7 @@
     "graphql": "^15.8.0",
     "graphql-tools": "^8.2.12",
     "knex": "^2.0.0",
+    "knex-migrate": "^1.7.4",
     "knex-tiny-logger": "^2.1.0",
     "koa": "^2.13.4",
     "koa-router": "^10.1.1",

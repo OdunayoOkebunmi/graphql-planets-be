@@ -21,6 +21,25 @@ query ($page: Int, $pageSize: Int) {
     }
   }
 }
+`
+export const getSpaceCenterByID = gql`
+query ($spaceCenterId: Float) {
+  spaceCenter(id: $spaceCenterId) {
+    id
+    uid
+    name
+    description
+  }
+}
+`
 
-
+export const getSpaceCenterByUID = gql`
+query ($uid: String) {
+  spaceCenter(uid: $uid) {
+    id
+    uid
+    name
+    description
+  }
+}
 `

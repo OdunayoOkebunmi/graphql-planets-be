@@ -4,7 +4,6 @@ import { getPlanets, getPlanetsByID } from './queries/planets.queries';
 import { seedPlanets } from './helper'
 
 
-
 describe('Planets', () => {
   beforeEach(async () => {
     await db.migrate.rollback()

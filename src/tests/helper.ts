@@ -17,3 +17,8 @@ export const seedSpaceCenters = async () => {
 
   return spaceCenters
 }
+
+export const createFlight = async () => {
+
+
+}

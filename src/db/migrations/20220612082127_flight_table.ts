@@ -10,16 +10,16 @@ export async function up (knex: Knex): Promise<void> {
     t.integer('availableSeats');
     t.integer('launchSiteId');
     t.integer('landingSiteId');
-    t
-      .foreign('launchSiteId')
-      .references('space_centers.id')
+    t.foreign('landingSiteId')
+      .references('id')
+      .inTable('space_centers')
+      .onDelete('CASCADE')
       .onUpdate('CASCADE')
-      .onDelete('CASCADE');
-    t
-      .foreign('landingSiteId')
-      .references('space_centers.id')
-      .onUpdate('CASCADE')
-      .onDelete('CASCADE');
+    t.foreign('launchSiteId')
+      .references('id')
+      .inTable('space_centers')
+      .onDelete('CASCADE')
+      .onUpdate('CASCADE');
   });
 }
 

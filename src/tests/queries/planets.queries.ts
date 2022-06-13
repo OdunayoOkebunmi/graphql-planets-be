@@ -21,8 +21,3 @@ query ($planetId: Float!) {
   }
 }
 `
-// npx knex migrate:up 20220612082127_flight_table.ts
-
-// npx knex migrate:up 20220609204934_create_space_centers_table.ts
-
-// npx knex migrate:up 20220609200658_create_planets_table.ts

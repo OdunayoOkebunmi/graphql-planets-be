@@ -11,9 +11,10 @@ export async function up (knex: Knex): Promise<void> {
     t.float('longitude');
     t.string('planet_code')
     t.foreign('planet_code')
-      .references('planets.code')
+      .references('code')
+      .inTable('planets')
+      .onDelete('CASCADE')
       .onUpdate('CASCADE')
-      .onDelete('CASCADE');
     t.timestamps(false, true)
     t.primary(['id'])
   })

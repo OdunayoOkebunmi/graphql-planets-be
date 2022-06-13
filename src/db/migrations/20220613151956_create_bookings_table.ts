@@ -8,9 +8,10 @@ export async function up (knex: Knex): Promise<void> {
     t.string('email');
     t.integer('flight_id');
     t.foreign('flight_id')
-      .references('flights.id')
+      .references('id')
+      .inTable('flights')
       .onDelete('CASCADE')
-      .onUpdate('CASCADE');
+      .onUpdate('CASCADE')
   });
 }
 
