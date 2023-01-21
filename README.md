@@ -1,4 +1,4 @@
-# strapi-be
+# graphql-planets-be
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -31,11 +31,11 @@
 ### Setting up
 1. Clone this repository into your local machine:
 ```
-e.g git clone https://github.com/OdunayoOkebunmi/strapi-be
+e.g git clone https://github.com/OdunayoOkebunmi/graphql-planets-be
 ```
 2. cd into the folder
 ```
-e.g cd strapi-be
+e.g cd graphql-planets-be
 ```
 
 3. Create `.env` file and fill out the required information 
